@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-qurantracker-dev-fd0dc-authRole",
+      "UnauthRoleArn": "arn:aws:iam::428464588749:role/amplify-qurantracker-dev-fd0dc-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::428464588749:role/amplify-qurantracker-dev-fd0dc-authRole",
+      "Region": "eu-west-1",
+      "DeploymentBucketName": "amplify-qurantracker-dev-fd0dc-deployment",
+      "UnauthRoleName": "amplify-qurantracker-dev-fd0dc-unauthRole",
+      "StackName": "amplify-qurantracker-dev-fd0dc",
+      "StackId": "arn:aws:cloudformation:eu-west-1:428464588749:stack/amplify-qurantracker-dev-fd0dc/08223690-ecf4-11ef-9a77-0653133637a3",
+      "AmplifyAppId": "d2d375rawltvn"
+    },
+    "categories": {
+      "auth": {
+        "qurantracker3d72eb38": {},
+        "qurantracker98f44518": {}
+      }
+    }
+  }
+}
