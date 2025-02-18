@@ -1,0 +1,39 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type User @model {
+  id: ID!
+  name: String!
+  email: String!
+  groups: [Group] @manyToMany(relationName: "GroupMembers")
+  progress: ReadingProgress @hasOne
+}
+
+type ReadingProgress @model {
+  id: ID!
+  userId: ID!
+  currentSurah: Int!
+  currentAyah: Int!
+  currentJuz: Int!
+  completedSurahs: [Int]
+  completedJuzs: [Int]
+  totalAyahsRead: Int!
+  lastUpdated: AWSDateTime!
+}
+
+type Group @model {
+  id: ID!
+  name: String!
+  code: String!
+  members: [User] @manyToMany(relationName: "GroupMembers")
+}
+
+type ProgressHistory @model {
+  id: ID!
+  userId: ID!
+  date: AWSDateTime!
+  surahsRead: [Int]!
+  ayahsRead: Int!
+  juzCompleted: Boolean
+}
