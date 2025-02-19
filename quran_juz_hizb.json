@@ -1,0 +1,672 @@
+{
+    "1": {
+        "juzNumber": 1,
+        "hizb": {
+            "1": {
+                "hizbNumber": 1,
+                "surahs": [
+                    {
+                        "nameArabic": "الفاتحة",
+                        "nameEnglish": "Al-Fatiha",
+                        "verseCount": 7
+                    },
+                    {
+                        "nameArabic": "البقرة",
+                        "nameEnglish": "Al-Baqarah",
+                        "verseCount": 286
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الفاتحة",
+                "nameEnglish": "Al-Fatiha",
+                "verseCount": 7
+            },
+            {
+                "nameArabic": "البقرة",
+                "nameEnglish": "Al-Baqarah",
+                "verseCount": 286
+            }
+        ]
+    },
+    "2": {
+        "juzNumber": 2,
+        "hizb": {
+            "2": {
+                "hizbNumber": 2,
+                "surahs": [
+                    {
+                        "nameArabic": "آل عمران",
+                        "nameEnglish": "Aal-E-Imran",
+                        "verseCount": 200
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "آل عمران",
+                "nameEnglish": "Aal-E-Imran",
+                "verseCount": 200
+            }
+        ]
+    },
+    "3": {
+        "juzNumber": 3,
+        "hizb": {
+            "3": {
+                "hizbNumber": 3,
+                "surahs": [
+                    {
+                        "nameArabic": "النساء",
+                        "nameEnglish": "An-Nisa",
+                        "verseCount": 176
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "النساء",
+                "nameEnglish": "An-Nisa",
+                "verseCount": 176
+            }
+        ]
+    },
+    "4": {
+        "juzNumber": 4,
+        "hizb": {
+            "4": {
+                "hizbNumber": 4,
+                "surahs": [
+                    {
+                        "nameArabic": "المائدة",
+                        "nameEnglish": "Al-Ma'idah",
+                        "verseCount": 120
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "المائدة",
+                "nameEnglish": "Al-Ma'idah",
+                "verseCount": 120
+            }
+        ]
+    },
+    "5": {
+        "juzNumber": 5,
+        "hizb": {
+            "5": {
+                "hizbNumber": 5,
+                "surahs": [
+                    {
+                        "nameArabic": "الأنعام",
+                        "nameEnglish": "Al-An'am",
+                        "verseCount": 165
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الأنعام",
+                "nameEnglish": "Al-An'am",
+                "verseCount": 165
+            }
+        ]
+    },
+    "6": {
+        "juzNumber": 6,
+        "hizb": {
+            "6": {
+                "hizbNumber": 6,
+                "surahs": [
+                    {
+                        "nameArabic": "الأعراف",
+                        "nameEnglish": "Al-A'raf",
+                        "verseCount": 206
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الأعراف",
+                "nameEnglish": "Al-A'raf",
+                "verseCount": 206
+            }
+        ]
+    },
+    "7": {
+        "juzNumber": 7,
+        "hizb": {
+            "7": {
+                "hizbNumber": 7,
+                "surahs": [
+                    {
+                        "nameArabic": "الأنفال",
+                        "nameEnglish": "Al-Anfal",
+                        "verseCount": 75
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الأنفال",
+                "nameEnglish": "Al-Anfal",
+                "verseCount": 75
+            }
+        ]
+    },
+    "8": {
+        "juzNumber": 8,
+        "hizb": {
+            "8": {
+                "hizbNumber": 8,
+                "surahs": [
+                    {
+                        "nameArabic": "التوبة",
+                        "nameEnglish": "At-Tawbah",
+                        "verseCount": 129
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "التوبة",
+                "nameEnglish": "At-Tawbah",
+                "verseCount": 129
+            }
+        ]
+    },
+    "9": {
+        "juzNumber": 9,
+        "hizb": {
+            "9": {
+                "hizbNumber": 9,
+                "surahs": [
+                    {
+                        "nameArabic": "يونس",
+                        "nameEnglish": "Yunus",
+                        "verseCount": 109
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "يونس",
+                "nameEnglish": "Yunus",
+                "verseCount": 109
+            }
+        ]
+    },
+    "10": {
+        "juzNumber": 10,
+        "hizb": {
+            "10": {
+                "hizbNumber": 10,
+                "surahs": [
+                    {
+                        "nameArabic": "هود",
+                        "nameEnglish": "Hud",
+                        "verseCount": 123
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "هود",
+                "nameEnglish": "Hud",
+                "verseCount": 123
+            }
+        ]
+    },
+    "11": {
+        "juzNumber": 11,
+        "hizb": {
+            "11": {
+                "hizbNumber": 11,
+                "surahs": [
+                    {
+                        "nameArabic": "يوسف",
+                        "nameEnglish": "Yusuf",
+                        "verseCount": 111
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "يوسف",
+                "nameEnglish": "Yusuf",
+                "verseCount": 111
+            }
+        ]
+    },
+    "12": {
+        "juzNumber": 12,
+        "hizb": {
+            "12": {
+                "hizbNumber": 12,
+                "surahs": [
+                    {
+                        "nameArabic": "الرعد",
+                        "nameEnglish": "Ar-Ra'd",
+                        "verseCount": 43
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الرعد",
+                "nameEnglish": "Ar-Ra'd",
+                "verseCount": 43
+            }
+        ]
+    },
+    "13": {
+        "juzNumber": 13,
+        "hizb": {
+            "13": {
+                "hizbNumber": 13,
+                "surahs": [
+                    {
+                        "nameArabic": "إبراهيم",
+                        "nameEnglish": "Ibrahim",
+                        "verseCount": 52
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "إبراهيم",
+                "nameEnglish": "Ibrahim",
+                "verseCount": 52
+            }
+        ]
+    },
+    "14": {
+        "juzNumber": 14,
+        "hizb": {
+            "14": {
+                "hizbNumber": 14,
+                "surahs": [
+                    {
+                        "nameArabic": "الحجر",
+                        "nameEnglish": "Al-Hijr",
+                        "verseCount": 99
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الحجر",
+                "nameEnglish": "Al-Hijr",
+                "verseCount": 99
+            }
+        ]
+    },
+    "15": {
+        "juzNumber": 15,
+        "hizb": {
+            "15": {
+                "hizbNumber": 15,
+                "surahs": [
+                    {
+                        "nameArabic": "النحل",
+                        "nameEnglish": "An-Nahl",
+                        "verseCount": 128
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "النحل",
+                "nameEnglish": "An-Nahl",
+                "verseCount": 128
+            }
+        ]
+    },
+    "16": {
+        "juzNumber": 16,
+        "hizb": {
+            "16": {
+                "hizbNumber": 16,
+                "surahs": [
+                    {
+                        "nameArabic": "الإسراء",
+                        "nameEnglish": "Al-Isra",
+                        "verseCount": 111
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الإسراء",
+                "nameEnglish": "Al-Isra",
+                "verseCount": 111
+            }
+        ]
+    },
+    "17": {
+        "juzNumber": 17,
+        "hizb": {
+            "17": {
+                "hizbNumber": 17,
+                "surahs": [
+                    {
+                        "nameArabic": "الكهف",
+                        "nameEnglish": "Al-Kahf",
+                        "verseCount": 110
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الكهف",
+                "nameEnglish": "Al-Kahf",
+                "verseCount": 110
+            }
+        ]
+    },
+    "18": {
+        "juzNumber": 18,
+        "hizb": {
+            "18": {
+                "hizbNumber": 18,
+                "surahs": [
+                    {
+                        "nameArabic": "مريم",
+                        "nameEnglish": "Maryam",
+                        "verseCount": 98
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "مريم",
+                "nameEnglish": "Maryam",
+                "verseCount": 98
+            }
+        ]
+    },
+    "19": {
+        "juzNumber": 19,
+        "hizb": {
+            "19": {
+                "hizbNumber": 19,
+                "surahs": [
+                    {
+                        "nameArabic": "طه",
+                        "nameEnglish": "Taha",
+                        "verseCount": 135
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "طه",
+                "nameEnglish": "Taha",
+                "verseCount": 135
+            }
+        ]
+    },
+    "20": {
+        "juzNumber": 20,
+        "hizb": {
+            "20": {
+                "hizbNumber": 20,
+                "surahs": [
+                    {
+                        "nameArabic": "الأنبياء",
+                        "nameEnglish": "Al-Anbiya",
+                        "verseCount": 112
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الأنبياء",
+                "nameEnglish": "Al-Anbiya",
+                "verseCount": 112
+            }
+        ]
+    },
+    "21": {
+        "juzNumber": 21,
+        "hizb": {
+            "21": {
+                "hizbNumber": 21,
+                "surahs": [
+                    {
+                        "nameArabic": "الحج",
+                        "nameEnglish": "Al-Hajj",
+                        "verseCount": 78
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الحج",
+                "nameEnglish": "Al-Hajj",
+                "verseCount": 78
+            }
+        ]
+    },
+    "22": {
+        "juzNumber": 22,
+        "hizb": {
+            "22": {
+                "hizbNumber": 22,
+                "surahs": [
+                    {
+                        "nameArabic": "المؤمنون",
+                        "nameEnglish": "Al-Mu’minun",
+                        "verseCount": 118
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "المؤمنون",
+                "nameEnglish": "Al-Mu’minun",
+                "verseCount": 118
+            }
+        ]
+    },
+    "23": {
+        "juzNumber": 23,
+        "hizb": {
+            "23": {
+                "hizbNumber": 23,
+                "surahs": [
+                    {
+                        "nameArabic": "النور",
+                        "nameEnglish": "An-Nur",
+                        "verseCount": 64
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "النور",
+                "nameEnglish": "An-Nur",
+                "verseCount": 64
+            }
+        ]
+    },
+    "24": {
+        "juzNumber": 24,
+        "hizb": {
+            "24": {
+                "hizbNumber": 24,
+                "surahs": [
+                    {
+                        "nameArabic": "الفرقان",
+                        "nameEnglish": "Al-Furqan",
+                        "verseCount": 77
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الفرقان",
+                "nameEnglish": "Al-Furqan",
+                "verseCount": 77
+            }
+        ]
+    },
+    "25": {
+        "juzNumber": 25,
+        "hizb": {
+            "25": {
+                "hizbNumber": 25,
+                "surahs": [
+                    {
+                        "nameArabic": "الشعراء",
+                        "nameEnglish": "Ash-Shu'ara",
+                        "verseCount": 227
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الشعراء",
+                "nameEnglish": "Ash-Shu'ara",
+                "verseCount": 227
+            }
+        ]
+    },
+    "26": {
+        "juzNumber": 26,
+        "hizb": {
+            "26": {
+                "hizbNumber": 26,
+                "surahs": [
+                    {
+                        "nameArabic": "النمل",
+                        "nameEnglish": "An-Naml",
+                        "verseCount": 93
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "النمل",
+                "nameEnglish": "An-Naml",
+                "verseCount": 93
+            }
+        ]
+    },
+    "27": {
+        "juzNumber": 27,
+        "hizb": {
+            "27": {
+                "hizbNumber": 27,
+                "surahs": [
+                    {
+                        "nameArabic": "القصص",
+                        "nameEnglish": "Al-Qasas",
+                        "verseCount": 88
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "القصص",
+                "nameEnglish": "Al-Qasas",
+                "verseCount": 88
+            }
+        ]
+    },
+    "28": {
+        "juzNumber": 28,
+        "hizb": {
+            "28": {
+                "hizbNumber": 28,
+                "surahs": [
+                    {
+                        "nameArabic": "العنكبوت",
+                        "nameEnglish": "Al-Ankabut",
+                        "verseCount": 69
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "العنكبوت",
+                "nameEnglish": "Al-Ankabut",
+                "verseCount": 69
+            }
+        ]
+    },
+    "29": {
+        "juzNumber": 29,
+        "hizb": {
+            "29": {
+                "hizbNumber": 29,
+                "surahs": [
+                    {
+                        "nameArabic": "الروم",
+                        "nameEnglish": "Ar-Rum",
+                        "verseCount": 60
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الروم",
+                "nameEnglish": "Ar-Rum",
+                "verseCount": 60
+            }
+        ]
+    },
+    "30": {
+        "juzNumber": 30,
+        "hizb": {
+            "30": {
+                "hizbNumber": 30,
+                "surahs": [
+                    {
+                        "nameArabic": "الناس",
+                        "nameEnglish": "An-Nas",
+                        "verseCount": 6
+                    }
+                ]
+            }
+        },
+        "surahs": [
+            {
+                "nameArabic": "الناس",
+                "nameEnglish": "An-Nas",
+                "verseCount": 6
+            }
+        ]
+    }
+}
