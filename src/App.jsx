@@ -50,7 +50,7 @@ const App = () => {
             !user ? (
               <Login setUser={setUser} />
             ) : (
-              <Navigate to={userGroup ? '/dashboard' : '/group'} />
+              <Navigate to={userGroup ? '/dashboard': '/'} />
             )
           } 
         />
@@ -60,7 +60,7 @@ const App = () => {
             !user ? (
               <SignUp setUser={setUser} />
             ) : (
-              <Navigate to={userGroup ? '/dashboard' : '/group'} />
+              <Navigate to={userGroup ? '/dashboard' : '/'} />
             )
           } 
         />

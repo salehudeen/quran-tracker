@@ -1,41 +1,66 @@
+import { signIn, signUp } from '@aws-amplify/auth';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setSession }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '',
+  });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError('');
-    setLoading(true);
-
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Login failed');
-      }
-
-      setSession(data);
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setLoading(false);
+  const validateForm = () => {
+   
+    if (formData.password.length < 8) {
+      setError("Password must be at least 8 characters long");
+      return false;
     }
-  };
+    
+    if (!formData.email.includes('@')) {
+      setError("Please enter a valid email address");
+      return false;
+    }
 
+    return true;
+  };
+  const handleSubmit = async (e) => {
+     e.preventDefault();
+     setError("");
+     
+     if (!validateForm()) {
+       return;
+     }
+ 
+     setLoading(true);
+     try {
+       await signIn({ 
+         username: formData.email, 
+         password: formData.password,
+         attributes: {
+           name: formData.name,
+           email: formData.email,
+         }
+       });
+      //  navigate to dashboard
+      alert ('Signup successful!')
+       navigate('/dashboard')
+     } catch (error) {
+       setError(error.message);
+       console.error('Signup error:', error);
+     } finally {
+       setLoading(false);
+     }
+   };
+   const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
@@ -51,7 +76,7 @@ const Login = ({ setSession }) => {
             </div>
           )}
           <div className="rounded-md shadow-sm -space-y-px">
-            <div>
+          <div>
               <label htmlFor="email" className="sr-only">
                 Email address
               </label>
@@ -60,10 +85,11 @@ const Login = ({ setSession }) => {
                 name="email"
                 type="email"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                value={formData.email}
+                onChange={handleChange}
+                autoComplete="email"
               />
             </div>
             <div>
@@ -75,10 +101,11 @@ const Login = ({ setSession }) => {
                 name="password"
                 type="password"
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={formData.password}
+                onChange={handleChange}
+                autoComplete="new-password"
               />
             </div>
           </div>
