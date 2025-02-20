@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { confirmSignUp, resendSignUpCode } from '@aws-amplify/auth';
+import { generateClient } from '@aws-amplify/api';
+import * as mutations from '../graphql/mutations'
 
-const VerificationModal = ({ email, onClose, onVerified }) => {
+const client = generateClient();
+
+const VerificationModal = ({ email,name, onClose, onVerified }) => {
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -11,14 +15,26 @@ const VerificationModal = ({ email, onClose, onVerified }) => {
     setUsername(email)
     setError('');
     setLoading(true);
+    
     try {
       console.log(username,code)
       await confirmSignUp({
         username,
         confirmationCode: code
       });
-   
+      const newUser = {
+        input: {
+          id: email, // Use email as ID or fetch Cognito user ID if needed
+          name: name || "New User", // Use provided name or a default
+          email: email,
+        }
+      };
+      await client.graphql({
+        query: mutations.createUser,
+        variables: newUser,
+      });
       onClose();
+     
     } catch (err) {
       setError(err.message);
     } finally {

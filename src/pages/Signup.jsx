@@ -70,7 +70,7 @@ const SignUp = ({ setSession }) => {
       });
 
       // Open verification modal after successful sign-up
-      setEmailForVerification(formData.email);
+      setEmailForVerification(formData.email,formData.name);
       setIsVerifyOpen(true);
     } catch (error) {
       setError(error.message);
