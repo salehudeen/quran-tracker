@@ -1,31 +1,97 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { generateClient } from '@aws-amplify/api';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Sidebar from "./Sidebar";
 import { Progress } from "@/components/ui/progress";
 import { Users, Book, Settings } from "lucide-react";
+import * as queries from '../graphql/queries';
+import ReadingProgress from "./ReadingProgress";
+
+const client = generateClient();
 
 const Dashboard = () => {
+  const location = useLocation();
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        // Get userId from location state or localStorage
+        const userId = location.state?.userId || localStorage.getItem('userId');
+        
+        if (!userId) {
+          throw new Error('No user ID found');
+        }
+
+        // Fetch user data using the query
+        const response = await client.graphql({
+          query: queries.getUser,
+          variables: { id: userId }
+        });
+
+        const user = response.data.getUser;
+        setUserData(user);
+
+        // Update progress state with actual data
+        if (user.progress) {
+          setProgress({
+            surah: user.progress.currentSurah || "Not started",
+            juz: user.progress.currentJuz || 0,
+            verse: user.progress.currentAyah || 0,
+            completion: calculateCompletion(user.progress),
+          });
+        }
+      } catch (err) {
+        console.error('Error fetching user data:', err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchUserData();
+  }, [location.state?.userId]);
+
+  // Calculate completion percentage based on progress data
+  const calculateCompletion = (progress) => {
+    if (!progress) return 0;
+    // This is a simple calculation - adjust based on your needs
+    const completedSurahs = progress.completedSurahs?.length || 0;
+    return Math.round((completedSurahs / 114) * 100); // 114 is total number of surahs
+  };
+
   const [progress, setProgress] = useState({
-    surah: "Al-Baqarah",
-    juz: 2,
-    hizb: 3,
-    verse: 142,
-    completion: 40, // Simulating progress percentage
+    surah: "Loading...",
+    juz: 0,
+    verse: 0,
+    completion: 0,
   });
 
-  const groups = [
-    { id: 1, name: "Morning Reciters" },
-    { id: 2, name: "Evening Quran Study" },
-  ];
+  if (loading) {
+    return <div className="flex min-h-screen items-center justify-center">
+      <p>Loading your dashboard...</p>
+    </div>;
+  }
+
+  if (error) {
+    return <div className="flex min-h-screen items-center justify-center">
+      <p className="text-red-500">Error: {error}</p>
+    </div>;
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-50">
       <Sidebar />
       <div className="flex-1 p-8 space-y-8">
-        {/* Page Title */}
+        {/* Page Title with User Name */}
         <div className="flex items-center justify-between">
-          <h1 className="text-3xl font-bold text-gray-800">📖 My Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-800">
+            Welcome, {userData?.name || 'Reader'} 📖
+          </h1>
           <Button variant="outline" className="flex items-center gap-2">
             <Settings size={18} /> Settings
           </Button>
@@ -41,52 +107,28 @@ const Dashboard = () => {
             </CardHeader>
             <CardContent>
               <ul className="space-y-3">
-                {groups.map((group) => (
+                {userData?.groups?.items?.map((group) => (
                   <li
                     key={group.id}
                     className="p-3 bg-gray-100 rounded-lg flex justify-between items-center hover:bg-gray-200 transition"
                   >
                     {group.name}
                     <Button variant="outline" size="sm">
-                      Join
+                      View
                     </Button>
                   </li>
-                ))}
+                )) || (
+                  <li className="text-gray-500">No groups joined yet</li>
+                )}
               </ul>
             </CardContent>
           </Card>
 
           {/* Current Progress */}
-          <Card className="hover:shadow-lg transition-all">
-            <CardHeader className="flex flex-row items-center justify-between">
-              <CardTitle className="text-lg font-semibold">
-                Current Progress
-              </CardTitle>
-              <Book size={20} className="text-gray-600" />
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-700">
-                <strong>Surah:</strong> {progress.surah}
-              </p>
-              <p className="text-sm text-gray-700">
-                <strong>Juz:</strong> {progress.juz}
-              </p>
-              <p className="text-sm text-gray-700">
-                <strong>Hizb:</strong> {progress.hizb}
-              </p>
-              <p className="text-sm text-gray-700">
-                <strong>Verse:</strong> {progress.verse}
-              </p>
-
-              {/* Progress Bar */}
-              <div className="mt-4">
-                <p className="text-xs font-medium text-gray-600">
-                  Completion: {progress.completion}%
-                </p>
-                <Progress value={progress.completion} className="mt-2" />
-              </div>
-            </CardContent>
-          </Card>
+         <ReadingProgress
+         userId={userData.id}
+         currentProgress={userData?.progress}
+         />
 
           {/* Quick Actions */}
           <Card className="hover:shadow-lg transition-all">

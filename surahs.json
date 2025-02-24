@@ -1,0 +1,236 @@
+[
+    {
+        "number": 1,
+        "nameEnglish": "Al-Fatiha",
+        "nameArabic": "الفاتحة",
+        "verseCount": 7
+    },
+    {
+        "number": 2,
+        "nameEnglish": "Al-Baqarah",
+        "nameArabic": "البقرة",
+        "verseCount": 286
+    },
+    {
+        "number": 3,
+        "nameEnglish": "Aal-E-Imran",
+        "nameArabic": "آل عمران",
+        "verseCount": 200
+    },
+    {
+        "number": 4,
+        "nameEnglish": "An-Nisa",
+        "nameArabic": "النساء",
+        "verseCount": 176
+    },
+    {
+        "number": 5,
+        "nameEnglish": "Al-Ma'idah",
+        "nameArabic": "المائدة",
+        "verseCount": 120
+    },
+    {
+        "number": 6,
+        "nameEnglish": "Al-An'am",
+        "nameArabic": "الأنعام",
+        "verseCount": 165
+    },
+    {
+        "number": 7,
+        "nameEnglish": "Al-A'raf",
+        "nameArabic": "الأعراف",
+        "verseCount": 206
+    },
+    {
+        "number": 8,
+        "nameEnglish": "Al-Anfal",
+        "nameArabic": "الأنفال",
+        "verseCount": 75
+    },
+    {
+        "number": 9,
+        "nameEnglish": "At-Tawbah",
+        "nameArabic": "التوبة",
+        "verseCount": 129
+    },
+    {
+        "number": 10,
+        "nameEnglish": "Yunus",
+        "nameArabic": "يونس",
+        "verseCount": 109
+    },
+    {
+        "number": 11,
+        "nameEnglish": "Hud",
+        "nameArabic": "هود",
+        "verseCount": 123
+    },
+    {
+        "number": 12,
+        "nameEnglish": "Yusuf",
+        "nameArabic": "يوسف",
+        "verseCount": 111
+    },
+    {
+        "number": 13,
+        "nameEnglish": "Ar-Ra'd",
+        "nameArabic": "الرعد",
+        "verseCount": 43
+    },
+    {
+        "number": 14,
+        "nameEnglish": "Ibrahim",
+        "nameArabic": "إبراهيم",
+        "verseCount": 52
+    },
+    {
+        "number": 15,
+        "nameEnglish": "Al-Hijr",
+        "nameArabic": "الحجر",
+        "verseCount": 99
+    },
+    {
+        "number": 16,
+        "nameEnglish": "An-Nahl",
+        "nameArabic": "النحل",
+        "verseCount": 128
+    },
+    {
+        "number": 17,
+        "nameEnglish": "Al-Isra",
+        "nameArabic": "الإسراء",
+        "verseCount": 111
+    },
+    {
+        "number": 18,
+        "nameEnglish": "Al-Kahf",
+        "nameArabic": "الكهف",
+        "verseCount": 110
+    },
+    {
+        "number": 19,
+        "nameEnglish": "Maryam",
+        "nameArabic": "مريم",
+        "verseCount": 98
+    },
+    {
+        "number": 20,
+        "nameEnglish": "Taha",
+        "nameArabic": "طه",
+        "verseCount": 135
+    },
+    {
+        "number": 21,
+        "nameEnglish": "Al-Anbiya",
+        "nameArabic": "الأنبياء",
+        "verseCount": 112
+    },
+    {
+        "number": 22,
+        "nameEnglish": "Al-Hajj",
+        "nameArabic": "الحج",
+        "verseCount": 78
+    },
+    {
+        "number": 23,
+        "nameEnglish": "Al-Mu’minun",
+        "nameArabic": "المؤمنون",
+        "verseCount": 118
+    },
+    {
+        "number": 24,
+        "nameEnglish": "An-Nur",
+        "nameArabic": "النور",
+        "verseCount": 64
+    },
+    {
+        "number": 25,
+        "nameEnglish": "Al-Furqan",
+        "nameArabic": "الفرقان",
+        "verseCount": 77
+    },
+    {
+        "number": 26,
+        "nameEnglish": "Ash-Shu'ara",
+        "nameArabic": "الشعراء",
+        "verseCount": 227
+    },
+    {
+        "number": 27,
+        "nameEnglish": "An-Naml",
+        "nameArabic": "النمل",
+        "verseCount": 93
+    },
+    {
+        "number": 28,
+        "nameEnglish": "Al-Qasas",
+        "nameArabic": "القصص",
+        "verseCount": 88
+    },
+    {
+        "number": 29,
+        "nameEnglish": "Al-Ankabut",
+        "nameArabic": "العنكبوت",
+        "verseCount": 69
+    },
+    {
+        "number": 30,
+        "nameEnglish": "Ar-Rum",
+        "nameArabic": "الروم",
+        "verseCount": 60
+    },
+    {
+        "number": 31,
+        "nameEnglish": "Luqman",
+        "nameArabic": "لقمان",
+        "verseCount": 34
+    },
+    {
+        "number": 32,
+        "nameEnglish": "As-Sajda",
+        "nameArabic": "السجدة",
+        "verseCount": 30
+    },
+    {
+        "number": 33,
+        "nameEnglish": "Al-Ahzab",
+        "nameArabic": "الأحزاب",
+        "verseCount": 73
+    },
+    {
+        "number": 34,
+        "nameEnglish": "Saba",
+        "nameArabic": "سبأ",
+        "verseCount": 54
+    },
+    {
+        "number": 35,
+        "nameEnglish": "Fatir",
+        "nameArabic": "فاطر",
+        "verseCount": 45
+    },
+    {
+        "number": 36,
+        "nameEnglish": "Ya-Sin",
+        "nameArabic": "يس",
+        "verseCount": 83
+    },
+    {
+        "number": 37,
+        "nameEnglish": "As-Saffat",
+        "nameArabic": "الصافات",
+        "verseCount": 182
+    },
+    {
+        "number": 38,
+        "nameEnglish": "Sad",
+        "nameArabic": "ص",
+        "verseCount": 88
+    },
+    {
+        "number": 39,
+        "nameEnglish": "Az-Zumar",
+        "nameArabic": "الزمر",
+        "verseCount": 75
+    }
+]

@@ -15,7 +15,8 @@ const SignUp = ({ setSession }) => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [isVerifyOpen, setIsVerifyOpen] = useState(false); // Track modal state
-  const [emailForVerification, setEmailForVerification] = useState(""); // Store email for verification
+  const [emailForVerification, setEmailForVerification] = useState('');
+  const [nameForVerification, setNameForVerification] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -67,10 +68,14 @@ const SignUp = ({ setSession }) => {
           name: formData.name,
           email: formData.email,
         },
+        
       });
-
+  
       // Open verification modal after successful sign-up
-      setEmailForVerification(formData.email,formData.name);
+     
+      setEmailForVerification(formData.email);
+      setNameForVerification(formData.name);
+    
       setIsVerifyOpen(true);
     } catch (error) {
       setError(error.message);
@@ -192,7 +197,9 @@ const SignUp = ({ setSession }) => {
        {/* Show verification modal */}
        {isVerifyOpen && (
         <VerificationModal
-          email={emailForVerification}
+          email ={ emailForVerification }
+          name = { nameForVerification }
+          password={formData.password} 
           onClose={() => setIsVerifyOpen(false) && navigate('/dashboard')}
           navigate={navigate}
         />

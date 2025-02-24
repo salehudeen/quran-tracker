@@ -1,34 +1,51 @@
-import { useState } from 'react';
-import { confirmSignUp, resendSignUpCode } from '@aws-amplify/auth';
+import {  useState } from 'react';
+import { confirmSignUp, getCurrentUser, resendSignUpCode, signIn, signOut } from '@aws-amplify/auth';
 import { generateClient } from '@aws-amplify/api';
 import * as mutations from '../graphql/mutations'
-
+// import { v4  } from 'uuid';
 const client = generateClient();
 
-const VerificationModal = ({ email,name, onClose, onVerified }) => {
+const VerificationModal = ({ name,email,password, onClose, }) => {
+         
   const [code, setCode] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  
   const [username, setUsername] = useState('');
-
+  const [userName, setName] = useState('');
   const handleConfirm = async () => {
     setUsername(email)
+    setName(name)
+    
     setError('');
     setLoading(true);
     
     try {
-      console.log(username,code)
+      signOut()
       await confirmSignUp({
-        username,
+        username:email,
         confirmationCode: code
       });
+
+      await signIn({
+        username: email,
+        password: password, // You'll need to pass the password from the signup form
+      });
+
+      
+      const  idUser  = await getCurrentUser();
+      console.log("current user", idUser.userId)
+
+      // const userId = v4();
+      
       const newUser = {
         input: {
-          id: email, // Use email as ID or fetch Cognito user ID if needed
-          name: name || "New User", // Use provided name or a default
+          id:idUser.userId , // Use email as ID or fetch Cognito user ID if needed
+          name: name , // Use provided name or a default
           email: email,
         }
       };
+      console.log("sending this to db",newUser)
       await client.graphql({
         query: mutations.createUser,
         variables: newUser,
