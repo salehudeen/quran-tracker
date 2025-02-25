@@ -20,7 +20,7 @@ import * as mutations from '../graphql/mutations';
 const client = generateClient();
 
 const GroupDetail = () => {
-  const { groupId } = useParams();
+  const groupId  = "7a135d87-14d0-43b9-9892-629d387a6d8f"
   const navigate = useNavigate();
   
   const [loading, setLoading] = useState(true);
@@ -37,9 +37,10 @@ const GroupDetail = () => {
         setLoading(true);
         
         // Get current user
-        const userData = await getCurrentUser();
-        setCurrentUser(userData.userId);
-        
+        // const userData = await getCurrentUser();
+        const usersIdnumber = localStorage.getItem('userId');
+        setCurrentUser(usersIdnumber);
+        console.log(currentUser)
         // Fetch group data
         const groupResponse = await client.graphql({
           query: queries.getGroup,
@@ -58,12 +59,12 @@ const GroupDetail = () => {
         const memberItems = membersResponse.data.groupMembersByGroupId.items;
         
         // Check if current user is a member
-        const userMembership = memberItems.find(m => m.userId === userData.userId);
+        const userMembership = memberItems.find(m => m.userId === "c24504a4-7051-705f-8342-7c376cb7bc77");
         setIsMember(!!userMembership);
         
         // For simplicity, assuming the first member is the admin/creator
         // In a real app, you'd have an admin field in the database
-        setIsAdmin(memberItems.length > 0 && memberItems[0].userId === userData.userId);
+        setIsAdmin(memberItems.length > 0 && memberItems[0].userId === "c24504a4-7051-705f-8342-7c376cb7bc77");
         
         // Fetch details for each member
         const membersWithDetails = await Promise.all(
@@ -175,7 +176,7 @@ const GroupDetail = () => {
     return <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
         <p className="text-red-500 mb-4">Error: {error}</p>
-        <Button onClick={() => navigate("/groups")}>
+        <Button onClick={() => navigate("/group")}>
           <ArrowLeft size={16} className="mr-2" />
           Back to Groups
         </Button>

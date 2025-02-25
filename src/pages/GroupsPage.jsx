@@ -264,7 +264,9 @@ const GroupsPage = () => {
                         <p className="font-medium">{group.name}</p>
                         <p className="text-xs text-gray-500">ID: {group.id}</p>
                       </div>
-                      <Button variant="outline" size="sm">
+                      <Button variant="outline" size="sm"
+                        
+                      >
                         View
                       </Button>
                     </li>
