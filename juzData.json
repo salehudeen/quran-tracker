@@ -1,0 +1,422 @@
+[
+    {
+      "number": 1,
+      "name": "Alif Lam Meem",
+      "startSurah": 1,
+      "startAyah": 1,
+      "endSurah": 2,
+      "endAyah": 141,
+      "quarters": [
+        {"quarter": 1, "surah": 1, "ayah": 1},
+        {"quarter": 2, "surah": 2, "ayah": 26},
+        {"quarter": 3, "surah": 2, "ayah": 60},
+        {"quarter": 4, "surah": 2, "ayah": 92}
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Sayaqool",
+      "startSurah": 2,
+      "startAyah": 142,
+      "endSurah": 2,
+      "endAyah": 252,
+      "quarters": [
+        {"quarter": 1, "surah": 2, "ayah": 142},
+        {"quarter": 2, "surah": 2, "ayah": 177},
+        {"quarter": 3, "surah": 2, "ayah": 203},
+        {"quarter": 4, "surah": 2, "ayah": 223}
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Tilka al-Rusul",
+      "startSurah": 2,
+      "startAyah": 253,
+      "endSurah": 3,
+      "endAyah": 92,
+      "quarters": [
+        {"quarter": 1, "surah": 2, "ayah": 253},
+        {"quarter": 2, "surah": 2, "ayah": 283},
+        {"quarter": 3, "surah": 3, "ayah": 15},
+        {"quarter": 4, "surah": 3, "ayah": 52}
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Lan Tanaloo",
+      "startSurah": 3,
+      "startAyah": 93,
+      "endSurah": 4,
+      "endAyah": 23,
+      "quarters": [
+        {"quarter": 1, "surah": 3, "ayah": 93},
+        {"quarter": 2, "surah": 3, "ayah": 133},
+        {"quarter": 3, "surah": 3, "ayah": 171},
+        {"quarter": 4, "surah": 4, "ayah": 1}
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Wal Mohsanat",
+      "startSurah": 4,
+      "startAyah": 24,
+      "endSurah": 4,
+      "endAyah": 147,
+      "quarters": [
+        {"quarter": 1, "surah": 4, "ayah": 24},
+        {"quarter": 2, "surah": 4, "ayah": 60},
+        {"quarter": 3, "surah": 4, "ayah": 88},
+        {"quarter": 4, "surah": 4, "ayah": 116}
+      ]
+    },
+    {
+      "number": 6,
+      "name": "La Yuhibbullah",
+      "startSurah": 4,
+      "startAyah": 148,
+      "endSurah": 5,
+      "endAyah": 81,
+      "quarters": [
+        {"quarter": 1, "surah": 4, "ayah": 148},
+        {"quarter": 2, "surah": 5, "ayah": 1},
+        {"quarter": 3, "surah": 5, "ayah": 27},
+        {"quarter": 4, "surah": 5, "ayah": 51}
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Wa Idha Sami'u",
+      "startSurah": 5,
+      "startAyah": 82,
+      "endSurah": 6,
+      "endAyah": 110,
+      "quarters": [
+        {"quarter": 1, "surah": 5, "ayah": 82},
+        {"quarter": 2, "surah": 5, "ayah": 109},
+        {"quarter": 3, "surah": 6, "ayah": 25},
+        {"quarter": 4, "surah": 6, "ayah": 75}
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Wa Law Annana",
+      "startSurah": 6,
+      "startAyah": 111,
+      "endSurah": 7,
+      "endAyah": 87,
+      "quarters": [
+        {"quarter": 1, "surah": 6, "ayah": 111},
+        {"quarter": 2, "surah": 6, "ayah": 141},
+        {"quarter": 3, "surah": 7, "ayah": 1},
+        {"quarter": 4, "surah": 7, "ayah": 40}
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Qalal Mala'u",
+      "startSurah": 7,
+      "startAyah": 88,
+      "endSurah": 8,
+      "endAyah": 40,
+      "quarters": [
+        {"quarter": 1, "surah": 7, "ayah": 88},
+        {"quarter": 2, "surah": 7, "ayah": 148},
+        {"quarter": 3, "surah": 7, "ayah": 190},
+        {"quarter": 4, "surah": 8, "ayah": 20}
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Wa'lamu",
+      "startSurah": 8,
+      "startAyah": 41,
+      "endSurah": 9,
+      "endAyah": 92,
+      "quarters": [
+        {"quarter": 1, "surah": 8, "ayah": 41},
+        {"quarter": 2, "surah": 9, "ayah": 1},
+        {"quarter": 3, "surah": 9, "ayah": 34},
+        {"quarter": 4, "surah": 9, "ayah": 60}
+      ]
+    },
+    {
+      "number": 11,
+      "name": "Ya'tadhiruna",
+      "startSurah": 9,
+      "startAyah": 93,
+      "endSurah": 11,
+      "endAyah": 5,
+      "quarters": [
+        {"quarter": 1, "surah": 9, "ayah": 93},
+        {"quarter": 2, "surah": 9, "ayah": 122},
+        {"quarter": 3, "surah": 10, "ayah": 26},
+        {"quarter": 4, "surah": 10, "ayah": 71}
+      ]
+    },
+    {
+      "number": 12,
+      "name": "Wa mamin Da'abah",
+      "startSurah": 11,
+      "startAyah": 6,
+      "endSurah": 12,
+      "endAyah": 52,
+      "quarters": [
+        {"quarter": 1, "surah": 11, "ayah": 6},
+        {"quarter": 2, "surah": 11, "ayah": 50},
+        {"quarter": 3, "surah": 11, "ayah": 98},
+        {"quarter": 4, "surah": 12, "ayah": 23}
+      ]
+    },
+    {
+      "number": 13,
+      "name": "Wa Ma Ubarri'u",
+      "startSurah": 12,
+      "startAyah": 53,
+      "endSurah": 14,
+      "endAyah": 52,
+      "quarters": [
+        {"quarter": 1, "surah": 12, "ayah": 53},
+        {"quarter": 2, "surah": 12, "ayah": 93},
+        {"quarter": 3, "surah": 13, "ayah": 19},
+        {"quarter": 4, "surah": 14, "ayah": 22}
+      ]
+    },
+    {
+      "number": 14,
+      "name": "Rubama",
+      "startSurah": 15,
+      "startAyah": 1,
+      "endSurah": 16,
+      "endAyah": 128,
+      "quarters": [
+        {"quarter": 1, "surah": 15, "ayah": 1},
+        {"quarter": 2, "surah": 15, "ayah": 51},
+        {"quarter": 3, "surah": 16, "ayah": 41},
+        {"quarter": 4, "surah": 16, "ayah": 90}
+      ]
+    },
+    {
+      "number": 15,
+      "name": "Subhanallazi",
+      "startSurah": 17,
+      "startAyah": 1,
+      "endSurah": 18,
+      "endAyah": 74,
+      "quarters": [
+        {"quarter": 1, "surah": 17, "ayah": 1},
+        {"quarter": 2, "surah": 17, "ayah": 50},
+        {"quarter": 3, "surah": 17, "ayah": 99},
+        {"quarter": 4, "surah": 18, "ayah": 32}
+      ]
+    },
+    {
+      "number": 16,
+      "name": "Qal Alam",
+      "startSurah": 18,
+      "startAyah": 75,
+      "endSurah": 20,
+      "endAyah": 135,
+      "quarters": [
+        {"quarter": 1, "surah": 18, "ayah": 75},
+        {"quarter": 2, "surah": 19, "ayah": 16},
+        {"quarter": 3, "surah": 19, "ayah": 88},
+        {"quarter": 4, "surah": 20, "ayah": 54}
+      ]
+    },
+    {
+      "number": 17,
+      "name": "Aqtaraba Linnas",
+      "startSurah": 21,
+      "startAyah": 1,
+      "endSurah": 22,
+      "endAyah": 78,
+      "quarters": [
+        {"quarter": 1, "surah": 21, "ayah": 1},
+        {"quarter": 2, "surah": 21, "ayah": 45},
+        {"quarter": 3, "surah": 21, "ayah": 94},
+        {"quarter": 4, "surah": 22, "ayah": 39}
+      ]
+    },
+    {
+      "number": 18,
+      "name": "Qad Aflaha",
+      "startSurah": 23,
+      "startAyah": 1,
+      "endSurah": 25,
+      "endAyah": 20,
+      "quarters": [
+        {"quarter": 1, "surah": 23, "ayah": 1},
+        {"quarter": 2, "surah": 23, "ayah": 64},
+        {"quarter": 3, "surah": 24, "ayah": 21},
+        {"quarter": 4, "surah": 24, "ayah": 53}
+      ]
+    },
+    {
+      "number": 19,
+      "name": "Wa Qalallazina",
+      "startSurah": 25,
+      "startAyah": 21,
+      "endSurah": 27,
+      "endAyah": 55,
+      "quarters": [
+        {"quarter": 1, "surah": 25, "ayah": 21},
+        {"quarter": 2, "surah": 25, "ayah": 63},
+        {"quarter": 3, "surah": 26, "ayah": 52},
+        {"quarter": 4, "surah": 27, "ayah": 1}
+      ]
+    },
+    {
+      "number": 20,
+      "name": "A'man Khalaq",
+      "startSurah": 27,
+      "startAyah": 56,
+      "endSurah": 29,
+      "endAyah": 45,
+      "quarters": [
+        {"quarter": 1, "surah": 27, "ayah": 56},
+        {"quarter": 2, "surah": 28, "ayah": 15},
+        {"quarter": 3, "surah": 28, "ayah": 59},
+        {"quarter": 4, "surah": 29, "ayah": 13}
+      ]
+    },
+    {
+      "number": 21,
+      "name": "Utlu Ma Oohi",
+      "startSurah": 29,
+      "startAyah": 46,
+      "endSurah": 33,
+      "endAyah": 30,
+      "quarters": [
+        {"quarter": 1, "surah": 29, "ayah": 46},
+        {"quarter": 2, "surah": 30, "ayah": 25},
+        {"quarter": 3, "surah": 31, "ayah": 22},
+        {"quarter": 4, "surah": 33, "ayah": 1}
+      ]
+    },
+    {
+      "number": 22,
+      "name": "Wa May-Yaqnut",
+      "startSurah": 33,
+      "startAyah": 31,
+      "endSurah": 36,
+      "endAyah": 27,
+      "quarters": [
+        {"quarter": 1, "surah": 33, "ayah": 31},
+        {"quarter": 2, "surah": 34, "ayah": 10},
+        {"quarter": 3, "surah": 35, "ayah": 15},
+        {"quarter": 4, "surah": 36, "ayah": 1}
+      ]
+    },
+    {
+      "number": 23,
+      "name": "Wa Mali",
+      "startSurah": 36,
+      "startAyah": 28,
+      "endSurah": 39,
+      "endAyah": 31,
+      "quarters": [
+        {"quarter": 1, "surah": 36, "ayah": 28},
+        {"quarter": 2, "surah": 37, "ayah": 22},
+        {"quarter": 3, "surah": 38, "ayah": 24},
+        {"quarter": 4, "surah": 39, "ayah": 1}
+      ]
+    },
+    {
+      "number": 24,
+      "name": "Faman Azlam",
+      "startSurah": 39,
+      "startAyah": 32,
+      "endSurah": 41,
+      "endAyah": 46,
+      "quarters": [
+        {"quarter": 1, "surah": 39, "ayah": 32},
+        {"quarter": 2, "surah": 39, "ayah": 67},
+        {"quarter": 3, "surah": 40, "ayah": 21},
+        {"quarter": 4, "surah": 41, "ayah": 1}
+      ]
+    },
+    {
+      "number": 25,
+      "name": "Ilaihi Yurad",
+      "startSurah": 41,
+      "startAyah": 47,
+      "endSurah": 45,
+      "endAyah": 37,
+      "quarters": [
+        {"quarter": 1, "surah": 41, "ayah": 47},
+        {"quarter": 2, "surah": 42, "ayah": 13},
+        {"quarter": 3, "surah": 42, "ayah": 51},
+        {"quarter": 4, "surah": 44, "ayah": 24}
+      ]
+    },
+    {
+      "number": 26,
+      "name": "Ha'a Meem",
+      "startSurah": 46,
+      "startAyah": 1,
+      "endSurah": 51,
+      "endAyah": 30,
+      "quarters": [
+        {"quarter": 1, "surah": 46, "ayah": 1},
+        {"quarter": 2, "surah": 47, "ayah": 15},
+        {"quarter": 3, "surah": 49, "ayah": 1},
+        {"quarter": 4, "surah": 50, "ayah": 27}
+      ]
+    },
+    {
+      "number": 27,
+      "name": "Qala Fama Khatbukum",
+      "startSurah": 51,
+      "startAyah": 31,
+      "endSurah": 57,
+      "endAyah": 29,
+      "quarters": [
+        {"quarter": 1, "surah": 51, "ayah": 31},
+        {"quarter": 2, "surah": 53, "ayah": 26},
+        {"quarter": 3, "surah": 55, "ayah": 1},
+        {"quarter": 4, "surah": 56, "ayah": 75}
+      ]
+    },
+    {
+      "number": 28,
+      "name": "Qad Sami'Allah",
+      "startSurah": 58,
+      "startAyah": 1,
+      "endSurah": 66,
+      "endAyah": 12,
+      "quarters": [
+        {"quarter": 1, "surah": 58, "ayah": 1},
+        {"quarter": 2, "surah": 59, "ayah": 18},
+        {"quarter": 3, "surah": 62, "ayah": 1},
+        {"quarter": 4, "surah": 65, "ayah": 1}
+      ]
+    },
+    {
+      "number": 29,
+      "name": "Tabarakallazi",
+      "startSurah": 67,
+      "startAyah": 1,
+      "endSurah": 77,
+      "endAyah": 50,
+      "quarters": [
+        {"quarter": 1, "surah": 67, "ayah": 1},
+        {"quarter": 2, "surah": 69, "ayah": 1},
+        {"quarter": 3, "surah": 72, "ayah": 1},
+        {"quarter": 4, "surah": 75, "ayah": 1}
+      ]
+    },
+    {
+      "number": 30,
+      "name": "Amma Yatasa'alun",
+      "startSurah": 78,
+      "startAyah": 1,
+      "endSurah": 114,
+      "endAyah": 6,
+      "quarters": [
+        {"quarter": 1, "surah": 78, "ayah": 1},
+        {"quarter": 2, "surah": 82, "ayah": 1},
+        {"quarter": 3, "surah": 87, "ayah": 1},
+        {"quarter": 4, "surah": 97, "ayah": 1}
+      ]
+    }
+  ]
