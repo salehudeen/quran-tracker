@@ -34,7 +34,7 @@ const VerificationModal = ({ name,email,password, onClose, }) => {
 
       
       const  idUser  = await getCurrentUser();
-      console.log("current user", idUser.userId)
+     
 
       // const userId = v4();
       
@@ -45,7 +45,7 @@ const VerificationModal = ({ name,email,password, onClose, }) => {
           email: email,
         }
       };
-      console.log("sending this to db",newUser)
+      
       await client.graphql({
         query: mutations.createUser,
         variables: newUser,

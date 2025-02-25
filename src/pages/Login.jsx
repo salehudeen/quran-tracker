@@ -1,4 +1,4 @@
-import { getCurrentUser, signIn, signUp } from '@aws-amplify/auth';
+import { getCurrentUser, signIn, signOut, signUp } from '@aws-amplify/auth';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -29,6 +29,7 @@ const Login = ({ setSession }) => {
   };
   const handleSubmit = async (e) => {
      e.preventDefault();
+     signOut()
      setError("");
      
      if (!validateForm()) {
@@ -46,10 +47,11 @@ const Login = ({ setSession }) => {
          }
        });
          const  idUser  = await getCurrentUser();
-             console.log("current user", idUser.userId)
+
         const userId = idUser.userId
+        console.log("current user", userId)
       //  navigate to dashboard
-      alert ('Signup successful!')
+      alert ('Sign In successful!')
        navigate('/dashboard',{userId})
      } catch (error) {
        setError(error.message);

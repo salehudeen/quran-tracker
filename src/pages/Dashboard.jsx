@@ -8,20 +8,23 @@ import { Progress } from "@/components/ui/progress";
 import { Users, Book, Settings } from "lucide-react";
 import * as queries from '../graphql/queries';
 import ReadingProgress from "./ReadingProgress";
+import { getCurrentUser } from "@aws-amplify/auth";
 
 const client = generateClient();
 
 const Dashboard = () => {
   const location = useLocation();
   const [userData, setUserData] = useState(null);
+  const [userId, setUserId] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  
   useEffect(() => {
+    
     const fetchUserData = async () => {
       try {
-        // Get userId from location state or localStorage
-        const userId = location.state?.userId || localStorage.getItem('userId');
+        const  idUser  =  await getCurrentUser();
+        const userId = idUser.userId
         
         if (!userId) {
           throw new Error('No user ID found');
@@ -30,21 +33,14 @@ const Dashboard = () => {
         // Fetch user data using the query
         const response = await client.graphql({
           query: queries.getUser,
-          variables: { id: userId }
+          variables: { id: userId}
         });
-
+        // console.log(response);
         const user = response.data.getUser;
         setUserData(user);
 
         // Update progress state with actual data
-        if (user.progress) {
-          setProgress({
-            surah: user.progress.currentSurah || "Not started",
-            juz: user.progress.currentJuz || 0,
-            verse: user.progress.currentAyah || 0,
-            completion: calculateCompletion(user.progress),
-          });
-        }
+        
       } catch (err) {
         console.error('Error fetching user data:', err);
         setError(err.message);
@@ -57,19 +53,9 @@ const Dashboard = () => {
   }, [location.state?.userId]);
 
   // Calculate completion percentage based on progress data
-  const calculateCompletion = (progress) => {
-    if (!progress) return 0;
-    // This is a simple calculation - adjust based on your needs
-    const completedSurahs = progress.completedSurahs?.length || 0;
-    return Math.round((completedSurahs / 114) * 100); // 114 is total number of surahs
-  };
+  
 
-  const [progress, setProgress] = useState({
-    surah: "Loading...",
-    juz: 0,
-    verse: 0,
-    completion: 0,
-  });
+  
 
   if (loading) {
     return <div className="flex min-h-screen items-center justify-center">
@@ -98,7 +84,7 @@ const Dashboard = () => {
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-1">
           {/* My Groups */}
           <Card className="hover:shadow-lg transition-all">
             <CardHeader className="flex flex-row items-center justify-between">
@@ -126,27 +112,11 @@ const Dashboard = () => {
 
           {/* Current Progress */}
          <ReadingProgress
-         userId={userData.id}
+         userId={userId}
          currentProgress={userData?.progress}
          />
 
-          {/* Quick Actions */}
-          <Card className="hover:shadow-lg transition-all">
-            <CardHeader>
-              <CardTitle className="text-lg font-semibold">
-                Quick Actions
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-col gap-4">
-              <Button className="w-full">Start New Reading</Button>
-              <Button variant="outline" className="w-full">
-                View Past Sessions
-              </Button>
-              <Button variant="destructive" className="w-full">
-                Reset Progress
-              </Button>
-            </CardContent>
-          </Card>
+          
         </div>
       </div>
     </div>

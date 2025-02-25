@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import {  getCurrentUser } from '@aws-amplify/auth';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Joingroup from './pages/Joingroup';
+import Joingroup from './pages/GroupsPage';
 import Dashboard from './pages/Dashboard';
+import GroupsPage from './pages/GroupsPage';
+import GroupDetail from './pages/GroupDetail';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -45,12 +47,13 @@ const App = () => {
     <Router>
       <Routes>
         {/* Redirect logged-in users directly to dashboard */}
-        <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Login setUser={setUser} />} />
-        <Route path="/signup" element={user ? <Navigate to="/dashboard" /> : <SignUp setUser={setUser} />} />
+        <Route path="/" element={  <Login setUser={setUser} />} />
+        <Route path="/signup" element={ <SignUp setUser={setUser} />} />
         
         {/* Protected routes */}
-        <Route path="/group" element={user ? <Joingroup /> : <Navigate to="/" />} />
-        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/" />} />
+        <Route path="/group" element={<GroupsPage /> } />
+        <Route path="/groups/:groupId" element={<GroupDetail />} />
+        <Route path="/dashboard" element={ <Dashboard /> } />
       </Routes>
     </Router>
   );
