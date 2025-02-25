@@ -29,9 +29,10 @@ const GroupsPage = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const currentUser = await getCurrentUser();
-        console.log(currentUser)
-        const userId = currentUser.userId;
+        const usersIdnumber = localStorage.getItem('userId');
+        // const currentUser = await getCurrentUser();
+        // console.log("current user", currentUser)
+        const userId = usersIdnumber;
         setUserId(userId);
         
         if (!userId) {

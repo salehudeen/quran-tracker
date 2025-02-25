@@ -25,7 +25,7 @@ const Dashboard = () => {
       try {
         const  idUser  =  await getCurrentUser();
         const userId = idUser.userId
-        
+        const usersIdnumber = localStorage.setItem('userId', userId);
         if (!userId) {
           throw new Error('No user ID found');
         }
