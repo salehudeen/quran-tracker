@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Book, Save, RotateCcw, ChevronDown, CheckCircle, Info } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
@@ -78,8 +77,8 @@ const ReadingProgress = ({ userId, client }) => {
     const fetchProgress = async () => {
       try {
         const client = generateClient();
-        const idUser = await getCurrentUser();
-        const userId = idUser.userId;
+         const idUser = await getCurrentUser();
+      const userId = idUser.userId;
         setLoading(true);
         if (client && userId) {
           // Use the proper query for getting reading progress
@@ -128,7 +127,6 @@ const ReadingProgress = ({ userId, client }) => {
         setLoading(false);
       }
     };
-    
     
     fetchProgress();
   }, [userId, client]);
@@ -438,8 +436,6 @@ const ReadingProgress = ({ userId, client }) => {
       setError("Failed to save progress");
       setSaveStatus("Failed to save");
       setTimeout(() => setSaveStatus(""), 2000);
-      setSaveStatus("Failed to save");
-      setTimeout(() => setSaveStatus(""), 2000);
     }
   };
 
@@ -519,7 +515,6 @@ const ReadingProgress = ({ userId, client }) => {
   const quarterInfo = getCurrentQuarterInfo();
 
   return (
-    <Card className="w-full max-w-md mx-auto">
     <Card className="w-full max-w-md mx-auto">
       <CardHeader>
         <div className="flex justify-between items-center">
@@ -648,25 +643,6 @@ const ReadingProgress = ({ userId, client }) => {
           <div className="text-center text-sm mt-2 text-green-600">{saveStatus}</div>
         )}
       </CardContent>
-      
-      <CardFooter className="flex justify-between border-t pt-4">
-        <div className="flex items-center text-sm text-gray-500">
-          <Info size={14} className="mr-1" />
-          {isSurahCompleted(session.currentSurah) 
-            ? "This surah is completed" 
-            : `${currentSurahData?.verseCount - session.currentAyah + 1} ayahs remaining in this surah`}
-        </div>
-        
-        <Button 
-          variant="ghost" 
-          size="sm" 
-          className="text-red-500 hover:text-red-700 hover:bg-red-50"
-          onClick={resetProgress}
-        >
-          <RotateCcw size={14} className="mr-1" />
-          Reset
-        </Button>
-      </CardFooter>
       
       <CardFooter className="flex justify-between border-t pt-4">
         <div className="flex items-center text-sm text-gray-500">
