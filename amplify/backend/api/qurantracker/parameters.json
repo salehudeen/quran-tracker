@@ -1,6 +1,5 @@
 {
   "AppSyncApiName": "qurantracker",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2025-02-19T09:15:54.264Z"
+  "DynamoDBEnableServerSideEncryption": false
 }

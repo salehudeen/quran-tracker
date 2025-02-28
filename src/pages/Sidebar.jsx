@@ -30,7 +30,7 @@ const Sidebar = () => {
   return (
     <div className="w-64 bg-white shadow-md min-h-screen flex flex-col">
       <div className="p-6 border-b">
-        <h2 className="text-xl font-bold">Reading Tracker</h2>
+        <h2 className="text-xl font-bold">Quran Tracker</h2>
       </div>
       
       <nav className="flex-1 p-4">

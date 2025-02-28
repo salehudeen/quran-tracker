@@ -51,7 +51,9 @@ const TOTAL_SURAHS = 114;
 const TOTAL_JUZ = 30;
 
 const GroupDetail = () => {
-  const groupId  = "7a135d87-14d0-43b9-9892-629d387a6d8f";
+ 
+  const groupId  = localStorage.getItem('groupDetailsId');
+  console.log(groupId)
   const navigate = useNavigate();
   
   const [loading, setLoading] = useState(true);
@@ -88,12 +90,16 @@ const GroupDetail = () => {
         
         const memberItems = membersResponse.data.groupMembersByGroupId.items;
         
-        // Check if current user is a member
-        const userMembership = memberItems.find(m => m.userId === "c24504a4-7051-705f-8342-7c376cb7bc77");
+        // Check if current user is a member using the retrieved userId
+        const userMembership = memberItems.find(m => m.userId === usersIdnumber);
         setIsMember(!!userMembership);
         
-        // For simplicity, assuming the first member is the admin/creator
-        setIsAdmin(memberItems.length > 0 && memberItems[0].userId === "c24504a4-7051-705f-8342-7c376cb7bc77");
+        // Determine admin status - consider first member or creator logic
+        // Assuming the group creator is stored in the first position or has a specific flag
+        setIsAdmin(memberItems.length > 0 && (
+          memberItems[0].userId === usersIdnumber || 
+          (groupData.creatorId && groupData.creatorId === usersIdnumber)
+        ));
         
         // Fetch details for each member
         const membersWithDetails = await Promise.all(
@@ -106,19 +112,24 @@ const GroupDetail = () => {
               
               const userData = userResponse.data.getUser;
               
-              // Fetch reading progress if available
+              // Streamlined progress fetching with proper error handling
               let progress = null;
-              if (userData.progress) {
-                progress = userData.progress;
-              } else if (userData.userProgressId) {
-                const progressResponse = await client.graphql({
-                  query: queries.getReadingProgress,
-                  variables: { id: userData.userProgressId }
-                });
-                progress = progressResponse.data.getReadingProgress;
+              try {
+                if (userData.id) {
+                  const progressResponse = await client.graphql({
+                    query: queries.getReadingProgress,
+                    variables: { id: userData.id }
+                  });
+                  
+                  if (progressResponse.data && progressResponse.data.getReadingProgress) {
+                    progress = progressResponse.data.getReadingProgress;
+                  }
+                }
+              } catch (progressErr) {
+                console.error(`Error fetching progress for user ${userData.id}:`, progressErr);
               }
               
-              // Get progress history for this user
+              // Get progress history with proper error handling
               let progressHistory = [];
               try {
                 const historyResponse = await client.graphql({
@@ -129,9 +140,35 @@ const GroupDetail = () => {
                   }
                 });
                 
-                progressHistory = historyResponse.data.listProgressHistories.items || [];
+                if (historyResponse.data && historyResponse.data.listProgressHistories) {
+                  progressHistory = historyResponse.data.listProgressHistories.items || [];
+                }
               } catch (histErr) {
                 console.error('Error fetching progress history:', histErr);
+              }
+              
+              // Ensure data format consistency
+              if (progress) {
+                // Handle completedSurahs and completedJuzs that might be stored as strings
+                if (progress.completedSurahs && typeof progress.completedSurahs === 'string') {
+                  try {
+                    progress.completedSurahs = JSON.parse(progress.completedSurahs);
+                  } catch (e) {
+                    progress.completedSurahs = [];
+                  }
+                }
+                
+                if (progress.completedJuzs && typeof progress.completedJuzs === 'string') {
+                  try {
+                    progress.completedJuzs = JSON.parse(progress.completedJuzs);
+                  } catch (e) {
+                    progress.completedJuzs = [];
+                  }
+                }
+                
+                // Ensure arrays exist
+                progress.completedSurahs = progress.completedSurahs || [];
+                progress.completedJuzs = progress.completedJuzs || [];
               }
               
               return {
@@ -166,6 +203,12 @@ const GroupDetail = () => {
   }, [groupId]);
   
   const leaveGroup = async () => {
+    // Ensure we have the current user before proceeding
+    if (!currentUser) {
+      setError("User information not available. Please try again.");
+      return;
+    }
+    
     try {
       // Find membership record
       const membershipResponse = await client.graphql({
@@ -178,11 +221,13 @@ const GroupDetail = () => {
         }
       });
       
-      const membership = membershipResponse.data.groupMembersByUserId.items[0];
+      const membershipItems = membershipResponse.data.groupMembersByUserId.items;
       
-      if (!membership) {
+      if (!membershipItems || membershipItems.length === 0) {
         throw new Error("Membership not found");
       }
+      
+      const membership = membershipItems[0];
       
       // Delete membership
       await client.graphql({
@@ -193,12 +238,13 @@ const GroupDetail = () => {
       });
       
       // Redirect to groups page
-      navigate("/groups");
+      navigate("/group");
     } catch (err) {
       console.error('Error leaving group:', err);
       setError(err.message);
     }
   };
+  
   
   const copyInviteInfo = () => {
     const inviteText = `Join my reading group "${group.name}"! Group ID: ${group.id}, Code: ${group.code}`;
@@ -219,11 +265,16 @@ const GroupDetail = () => {
     // For completed surahs + current position calculation
     let completedCount = 0;
     if (progress.completedSurahs) {
-      completedCount = progress.completedSurahs.length || 0;
+      // Handle array or stringified array
+      const completedArray = typeof progress.completedSurahs === 'string' 
+        ? JSON.parse(progress.completedSurahs) 
+        : progress.completedSurahs;
+        
+      completedCount = Array.isArray(completedArray) ? completedArray.length : 0;
     }
     
-    // Also consider current position
-    const currentPosition = progress.currentSurah / TOTAL_SURAHS * 100;
+    // Consider current position
+    const currentPosition = (progress.currentSurah || 0) / TOTAL_SURAHS * 100;
     
     return Math.min(Math.round((completedCount / TOTAL_SURAHS) * 100), 100);
   };
@@ -234,11 +285,16 @@ const GroupDetail = () => {
     
     let completedCount = 0;
     if (progress.completedJuzs) {
-      completedCount = progress.completedJuzs.length || 0;
+      // Handle array or stringified array
+      const completedArray = typeof progress.completedJuzs === 'string' 
+        ? JSON.parse(progress.completedJuzs) 
+        : progress.completedJuzs;
+        
+      completedCount = Array.isArray(completedArray) ? completedArray.length : 0;
     }
     
-    // Also consider current position
-    const currentPosition = progress.currentJuz / TOTAL_JUZ * 100;
+    // Consider current position
+    const currentPosition = (progress.currentJuz || 0) / TOTAL_JUZ * 100;
     
     return Math.min(Math.round((completedCount / TOTAL_JUZ) * 100), 100);
   };
@@ -387,7 +443,7 @@ const GroupDetail = () => {
     return <div className="flex min-h-screen items-center justify-center">
       <div className="text-center">
         <p className="text-red-500 mb-4">Error: {error}</p>
-        <Button onClick={() => navigate("/groups")}>
+        <Button onClick={() => navigate("/group")}>
           <ArrowLeft size={16} className="mr-2" />
           Back to Groups
         </Button>

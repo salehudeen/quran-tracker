@@ -327,10 +327,14 @@ const ReadingProgress = ({ userId, client }) => {
   };
 
   const saveProgress = async () => {
-    try {
+    console.log("Saving progress...");
       const client = generateClient();
       const idUser = await getCurrentUser();
       const userId = idUser.userId;
+      console.log("trying to use ",userId,client)
+    try {
+      
+      console.log("trying to use ",userId,client)
       setSaveStatus("Saving...");
       console.log("Starting save operation with client and userId:", !!client, userId);
       
@@ -431,6 +435,7 @@ const ReadingProgress = ({ userId, client }) => {
       setSaveStatus("Saved successfully!");
       setTimeout(() => setSaveStatus(""), 2000);
     } catch (err) {
+      
       console.error("Error saving progress:", err);
       console.error("Error details:", err.errors || err.message || JSON.stringify(err));
       setError("Failed to save progress");

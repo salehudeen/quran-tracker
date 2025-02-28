@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Users, PlusCircle, LogIn } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import * as queries from '../graphql/queries';
 import * as mutations from '../graphql/mutations';
@@ -14,6 +15,7 @@ import * as mutations from '../graphql/mutations';
 const client = generateClient();
 
 const GroupsPage = () => {
+  const navigate = useNavigate();
   const [userId, setUserId] = useState(null);
   const [userData, setUserData] = useState(null);
   const [userGroups, setUserGroups] = useState([]);
@@ -25,7 +27,9 @@ const GroupsPage = () => {
   const [newGroupName, setNewGroupName] = useState("");
   const [joinGroupCode, setJoinGroupCode] = useState("");
   const [joinGroupId, setJoinGroupId] = useState("");
+  
 
+  
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -72,6 +76,7 @@ const GroupsPage = () => {
           );
           
           setUserGroups(groups);
+          
         }
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -83,7 +88,12 @@ const GroupsPage = () => {
 
     fetchUserData();
   }, []);
-  
+  const navigateToGroupDetails = async (groupId) => {
+    const groupDetailsId = localStorage.setItem('groupDetailsId', groupId);
+    console.log(groupDetailsId)
+    navigate(`/groups/${groupId}`,groupDetailsId);
+  }
+
   const createNewGroup = async () => {
     if (!newGroupName.trim()) {
       setError("Please enter a group name");
@@ -265,7 +275,7 @@ const GroupsPage = () => {
                         <p className="text-xs text-gray-500">ID: {group.id}</p>
                       </div>
                       <Button variant="outline" size="sm"
-                        
+                        onClick={() => navigateToGroupDetails(group.id)}
                       >
                         View
                       </Button>
